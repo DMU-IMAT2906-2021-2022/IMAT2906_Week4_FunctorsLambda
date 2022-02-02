@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION "3.14.0")
+
+project("Functors")
+
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+
+add_executable("${PROJECT_NAME}" "Functors.cpp")
+
+
+
+install(TARGETS "${PROJECT_NAME}" DESTINATION bin) #${CMAKE_INSTALL_PREFIX}/bin
+install(FILES "Functors.cpp" DESTINATION src)
+
+# Group into "Source Files" and "Header Files"
+    if ("${FILE}" MATCHES ".*\\.cpp")
+      set(GROUP "src${GROUP}")
+    elseif("${FILE}" MATCHES ".*\\.h")
+      set(GROUP "include${GROUP}")
+    endif()
