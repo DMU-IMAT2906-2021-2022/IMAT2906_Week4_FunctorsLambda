@@ -20,3 +20,6 @@ install(FILES "Functors.cpp" DESTINATION src)
     elseif("${FILE}" MATCHES ".*\\.h")
       set(GROUP "include${GROUP}")
     endif()
+
+set(CMAKE_SUPPRESS_REGENERATION true)
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
